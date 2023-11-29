@@ -62,7 +62,7 @@
                         <h1 class="display-5 fw-bolder text-white mb-2">NWOW E-Bike Shop-Camilmil</h1>
                         <p class="lead fw-normal text-white-50 mb-4">Easy to BUY Easy to RIDE!</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/Admin" >
+                            <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/admin" >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="1 2 16 16">
   <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
 </svg>
@@ -97,9 +97,9 @@
         <img class="card-img-top" src="https://image.made-in-china.com/45f3j00HEAYpLTWVMcG/Folding-3-Wheel-Adult-Smart-Motorcycle-Electric-E-Trike-for-Sale-Philippine.jpg" alt="..." />
         <div class="card-body p-4">
             <div class="badge bg-gradient bg-gradient rounded-pill mb-2">News</div>
-            <a class="text-decoration-none link-dark stretched-link" href="/ListEbike"><h5 class="card-title mb-3">Electric Tricycle</h5></a>
+            <a class="text-decoration-none link-dark stretched-link" href="/Etable"><h5 class="card-title mb-3">Electric Tricycle</h5></a>
             <div class="text-center">
-                <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/ListEbike">
+                <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/Etable">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="1 2 16 16">
                         <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
                     </svg>
@@ -115,9 +115,9 @@
         <img class="card-img-top mt-16" src="https://64-bit.co.uk/wp-content/uploads/2017/04/pc-mechanic-icon.png" alt="..." />
         <div class="card-body p-4">
             <div class="badge bg-gradient bg-gradient rounded-pill mb-2">News</div>
-            <a class="text-decoration-none link-dark stretched-link" href="/Assignment"><h5 class="card-title mb-3">Mechanics Assignment</h5></a>
+            <a class="text-decoration-none link-dark stretched-link" href="/assignment"><h5 class="card-title mb-3">Mechanics Assignment</h5></a>
             <div class="text-center">
-                <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/Assignment">
+                <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/assignment">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="1 2 16 16">
                         <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
                     </svg>

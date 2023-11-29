@@ -48,5 +48,10 @@ public function verifyUser($email, $verificationCode) {
 
 }
 
+public function getProduct(){
+    return $this->db->raw("select * from products");
+}
+
+
 }
 ?>

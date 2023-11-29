@@ -50,7 +50,10 @@ $router->get('/home', 'Welcome::home');
 $router->get('/contact', 'Welcome::contact');
 $router->get('/signin', 'Welcome::signin');
 $router->get('/AddAssignment', 'Welcome::AddAssignment');
-
+$router->get('/admin', 'Welcome::admin');
+$router->get('/Ebike', 'Welcome::Ebike');
+$router->get('/Etable', 'Welcome::Etable');
+$router->get('/assignment', 'Welcome::assignment');
 
 
 
@@ -58,7 +61,7 @@ $router->get('/AddAssignment', 'Welcome::AddAssignment');
 
 
 // for email
-
+// $router->post('/insert', 'Welcome::insert');
 $router->get('/', 'Welcome1::register');
 $router->get('/login', 'Welcome1::login');
 $router->get('/dashboard', 'Welcome1::dashboard');
@@ -67,3 +70,8 @@ $router->post('/validate_login', 'Welcome1::login_val');
 $router->post('/email', 'Welcome1::email');
 $router->get('/verify', 'Welcome1::account');
 $router->post('/check', 'Welcome1::check');
+
+
+
+//sheesh
+

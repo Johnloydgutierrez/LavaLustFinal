@@ -64,7 +64,7 @@ $database['main'] = array(
     'port'		=> '3306',
     'username'	=> 'root',
     'password'	=> '',
-    'database'	=> 'email',
+    'database'	=> 'lavalustfinal',
     'charset'	=> 'utf8',
     'dbprefix'	=> '',
 );

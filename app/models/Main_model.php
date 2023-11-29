@@ -2,9 +2,12 @@
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 class Main_model extends Model {
+
+    public function __construct(){
+        $this->call->database();
+    }
 	public function insert($employee, $description, $location, $contact, $customer) {
-		
-		$data = array(
+        $data = array(
 			'employee' => $employee,
 			'description' => $description,
 			'location' => $location,
@@ -13,7 +16,14 @@ class Main_model extends Model {
 		);
 
 		$result = $this->db->table('addasign')->insert($data);
+
+        }
+    
+	
+	public function table() {
+		return $this->db->raw("select * from addasign");
 	}
+
 
 	
 }
