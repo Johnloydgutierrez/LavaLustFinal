@@ -5,52 +5,56 @@ class Admin extends Controller {
 
 		public function display(){
 			$this->call->model('Addproduct_model');
-			$data['info'] = $this->Addproduct_model->getProduct();
-			$this->call->view('admintable', $data);
+			$data['info'] = $this->Addproduct_model->getInfo();
+			$this->call->view('Ebikelist', $data);
 		}
 
+        public function add()
+        {
+            $productName = $this->io->post('name');
+            $description = $this->io->post('description');
+            $price = $this->io->post('price');
+            $stock = $this->io->post('stock');
+            $category = $this->io->post('category');
+        
+            $bind = array(
+                "productName" => $productName,
+                "description" => $description,
+                "price" => $price,
+                "stock" => $stock,
+                "category" => $category
+            );
+        
+            $this->db->table('products')->insert($bind);
+         $this->call->view('Ebikelist');
+        }
+        
 
-	public function add(){
-		$name = $this->io->post('name');
-		$description = $this->io->post('description');
-		$price = $this->io->post('price');
-		$stock_quantity = $this->io->post('stock_quantity');
-		$category_product = $this->io->post('category_product');
-		$bind = array(
-			"name" => $name,
-			"description" => $description,
-			"price" => $price,
-			"stock_quantity" => $stock_quantity,
-			"category_product" => $category_product,
-			
-		);
-		$this->db->table('product')->insert($bind);
-		redirect('adminform');
-	}
-	
-	public function delete($product_id)
+    public function delete($productID)
     {
-        if(isset($product_id)){
-            $this->db->table('product')->where("product_id", $product_id)->delete();
-            redirect('/admintable');
+        if(isset($productID)){
+            $this->db->table('products')->where("productID", $productID)->delete();
+            $this->call->view('Ebikelist');
         }
         else{
             $_SESSION['delete'] = "FAILED";
-            redirect('/admintable');
+            $this->call->view('Ebikelist');
         }
         
     }
 
-    public function edit($product_id)
+    
+    public function edit($id)
     {
         $this->call->model('Addproduct_model');
-        $data['edit'] = $this->Addproduct_model->searchInfo($product_id);
-        return $this->call->view('adminform', $data);
+        $data['info'] = $this->Addproduct_model->getInfo();
+        $data['edit'] = $this->Addproduct_model->searchInfo($id);
+        $this->call->view('/Ebikelist', $data);
     }
 
-    public function submitedit($product_id)
+    public function submitedit($productID)
     {
-        if(isset($product_id))
+        if(isset($productID))
         {
         $name = $this->io->post('name');
         $description = $this->io->post('description');
@@ -62,8 +66,8 @@ class Admin extends Controller {
             "price" => $price,
             "stock_quantity" => $stock_quantity,
         ];
-        $this->db->table('products')->where("product_id", $product_id)->update($data);
-        redirect('/Ebiketable');    
+        $this->db->table('products')->where("productID", $productID)->update($data);
+        redirect('/Ebikelist');    
         }
         
     }

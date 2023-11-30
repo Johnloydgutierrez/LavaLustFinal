@@ -73,5 +73,13 @@ $router->post('/check', 'Welcome1::check');
 
 
 
+//update and delete
+$router->get('/display', 'Admin::display');
+$router->post('/submit', 'Admin::add');
+$router->get('/delete/(:num)', 'Admin::delete');
+$router->get('/edit/(:num)', 'Admin::edit');
+$router->post('/submitedit/(:num)', 'Admin::submitedit');
+
+
 //sheesh
 
