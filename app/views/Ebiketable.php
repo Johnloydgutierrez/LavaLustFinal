@@ -68,6 +68,9 @@
         tr:hover {
             background-color: #f1f1f1;
         }
+        h1{
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -88,7 +91,7 @@
                                 <th>Price</th>
                                 <th>Category</th>
                                 <th>Stock</th>
-                                <th>Action</th>
+                                
                             </thead>
                             <tbody>
                                 <?php $LAVA =& lava_instance(); ?>
@@ -101,15 +104,7 @@
                                     <td><?= $for['price']?></td>    
                                     <td><?= $for['category']?></td>
                                     <td><?= $for['stock']?></td>
-                                    <td>
-                                        <a href="/edit/<?= $for['ProductID'] ?>" class="edit-button">
-                                            <i class="fas fa-edit"></i> Edit
-                                        </a>
-                                        &#160;
-                                        <a href="/delete/<?= $for['ProductID'] ?>" class="delete-button">
-                                            <i class="fas fa-trash-alt"></i> Delete
-                                        </a>
-                                    </td>
+                                    
                                 </tr>
                                 <?php endforeach ?>
                             </tbody>

@@ -40,35 +40,50 @@ class Welcome extends Controller {
 	public function assignment() {
 		$this->call->view('assignment');
 	}
-	public function AddAssignment() {
+	public function AddAssignment()  {
+
+
 		if ($this->form_validation->submitted()) {
-			$this->form_validation
-
-			->name('employee')	
-
-			->name('description')
-
-			->name('location')
-
-			->name('contact')
-
-			->name('customer')
-			->required();
-			
-			if ($this->form_validation->run())
-			{
-				$this->Main_model->insert($this->io->post('employee'), $this->io->post('description'), $this-> io->post('location'), $this->io->post('contact'), $this->io->post('customer'));
-				redirect('/AddAssignment');
-				exit();
+			$this->form_validation->name('employee')->required()
+								->name('description')->required()
+								->name('location')->required()
+								->name('contact')->required()
+								->name('customer')->required();
+		
+			if ($this->form_validation->run()) {
+				$employee = $this->io->post('employee');
+				$description = $this->io->post('description');
+				$location = $this->io->post('location');
+				$contact = $this->io->post('contact');
+				$customer = $this->io->post('customer');
+		
+				$this->Main_model->insert( $employee, $description, $location, $contact, $customer );
+				redirect('AddAssignment'); // Replace 'success_page' with your actual success page URL
+			} else {
+				// Handle form validation errors
+				$data['error_message'] = validation_errors(); // Include form validation errors in your data
+				$this->call->view('AddAssignment', $data); // Replace 'your_form_view' with your actual form view
 			}
-			else{
-				$this->call->view('AddAssignment');
-			}
+		} else {
+			$data = $this->Main_model->read();
+			$this->call->view('AddAssignment',$data);	
+		}
+		
 
-				}	
-			$data=$this->Main_model->table();	
-			$this->call->view('AddAssignment', $data);
-	}
+        
+        
+        
+        
+
+
+
+	
+	  
+    }
+	public function read(){
+        $data = $this->Main_model->read();
+        $this->call->view('AddAssignment', $data);
+    }
 
 	
 

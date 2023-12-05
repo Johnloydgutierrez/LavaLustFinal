@@ -9,7 +9,27 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="" rel="">
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Your custom scripts -->
+<script src="public/admin/js/main.js"></script>
+<meta content="Your keywords" name="keywords">
+<meta content="Your description" name="description">
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,14 +41,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="public/admin/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="public/admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href=<?=site_url("public/admin/lib/owlcarousel/assets/owl.carousel.min.css") ?> rel="stylesheet">
+    <link href=<?=site_url("public/admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css")?> rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="public/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href=<?=site_url("public/admin/css/bootstrap.min.css")?> rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="public/admin/css/style.css" rel="stylesheet">
+    <link href=<?=site_url("public/admin/css/style.css")?> rel="stylesheet">
 </head>
 <style>
         body {
@@ -167,40 +187,40 @@
                     <div class="col-sm-12 col-xl-6 mx-auto">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">NWOW Ebikelist</h6>
-                            <form action="/<?=(isset($edit['productID'])) ? "submitedit/" . $edit['productID'] : "submit" ?>" method="post">
+                            <form action="/<?=(isset($edit['Product_id'])) ? "submitedit/" . $edit['Product_id'] : "submit" ?>" method="post">
                                 <div class="mb-3">
                                     <label for="productName" class="form-label">Product Name</label>
-                                    <input type="text" class="form-control" id="productName" name="name" required value="<?=(isset($edit['productID'])) ? $edit['productName'] : ""?>">
+                                    <input type="text" class="form-control" id="productName" name="name" required value="<?=(isset($edit['Product_id'])) ? $edit['productName'] : ""?>">
 
                                 </div>
                                 <div class="mb-3">
                                     <label for="productDescription" class="form-label">Product Description</label>
-                                    <textarea class="form-control" id="productDescription" name="description" required><?=(isset($edit['productID'])) ? $edit['description'] : ""?></textarea>
+                                    <textarea class="form-control" id="productDescription" name="description" required><?=(isset($edit['Product_id'])) ? $edit['description'] : ""?></textarea>
                                 </div>
 
                                 <!-- Price -->
                                 <div class="mb-3">
                                     <label for="exampleInputPrice" class="form-label">Price</label>
-                                    <input type="number" class="form-control" id="exampleInputPrice" name="price" required value="<?=(isset($edit['productID'])) ? $edit['price'] : ""?>">
+                                    <input type="number" class="form-control" id="exampleInputPrice" name="price" required value="<?=(isset($edit['Product_id'])) ? $edit['price'] : ""?>">
                                 </div>
 
                                 <!-- Stock -->
                                 <div class="mb-3">
                                     <label for="exampleInputStock" class="form-label">Stock</label>
-                                    <input type="number" class="form-control" id="exampleInputStock" name="stock" required value="<?=(isset($edit['productID'])) ? $edit['stock'] : ""?>">
+                                    <input type="number" class="form-control" id="exampleInputStock" name="stock" required value="<?=(isset($edit['Product_id'])) ? $edit['stock'] : ""?>">
                                 </div>
 
                                 <!-- Category -->
                                 <h6 class="mb-4">Category</h6>
                                 <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="category" required>
                                     <option selected disabled>Select Category</option>
-                                    <option value="2 wheels" <?=(isset($edit['productID']) && $edit['category'] == "2 wheels") ? "selected" : ""?>>2 wheels</option>
-                                    <option value="3 wheels" <?=(isset($edit['productID']) && $edit['category'] == "3 wheels") ? "selected" : ""?>>3 wheels</option>
-                                    <option value="4 wheels" <?=(isset($edit['productID']) && $edit['category'] == "4 wheels") ? "selected" : ""?>>4 wheels</option>
+                                    <option value="2 wheels" <?=(isset($edit['Product_id']) && $edit['category'] == "2 wheels") ? "selected" : ""?>>2 wheels</option>
+                                    <option value="3 wheels" <?=(isset($edit['Product_id']) && $edit['category'] == "3 wheels") ? "selected" : ""?>>3 wheels</option>
+                                    <option value="4 wheels" <?=(isset($edit['Product_id']) && $edit['category'] == "4 wheels") ? "selected" : ""?>>4 wheels</option>
     
                                 </select>
 
-                                <button type="submit" class="btn btn-primary"><?=(isset($edit['productID'])) ? "Update" : "Submit"?></button>
+                                <button type="submit" class="btn btn-primary"><?=(isset($edit['Product_id'])) ? "Update" : "Submit"?></button>
                             </form>
 
                         </div>
@@ -235,10 +255,10 @@
                                         <td><?= $for['price']?></td>    
                                         <td><?= $for['category']?></td>
                                         <td><?= $for['stock']?></td>
-                                        <td><a href="/edit/<?= $for['ProductID'] ?>" class="edit-button">
+                                        <td><a href="/edit/<?= $for['Product_id'] ?>" class="edit-button">
                                                 <i class="fas fa-edit"></i> Edit
                                             </a> &#160;
-                                            <a href="/delete/<?= $for['ProductID'] ?>" class="delete-button">
+                                            <a href="/delete/<?= $for['Product_id'] ?>" class="delete-button">
                                                 <i class="fas fa-trash-alt"></i> Delete
                                             </a>
                                         </td>
@@ -277,19 +297,20 @@
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
+   
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="public/admin/lib/chart/chart.min.js"></script>
-    <script src="public/admin/lib/easing/easing.min.js"></script>
-    <script src="public/admin/lib/waypoints/waypoints.min.js"></script>
-    <script src="public/admin/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="public/admin/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="public/admin/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="public/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src=<?site_url("https://code.jquery.com/jquery-3.4.1.min.js6")?>></script>
+    <script src=<?site_url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js")?>></script>
+    <script src=<?site_url("public/admin/lib/chart/chart.min.js")?>></script>
+    <script src=<?site_url("public/admin/lib/easing/easing.min.js")?>></script>
+    <script src=<?site_url("public/admin/lib/waypoints/waypoints.min.js")?>></script>
+    <script src=<?site_url("public/admin/lib/owlcarousel/owl.carousel.min.js")?>></script>
+    <script src=<?site_url("public/admin/lib/tempusdominus/js/moment.min.js")?>></script>
+    <script src=<?site_url("public/admin/lib/tempusdominus/js/moment-timezone.min.js")?>></script> 
+    <script src=<?site_url("public/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js")?>></script>
 
     <!-- Template Javascript -->
-    <script src="public/admin/js/main.js"></script>
+    <script src=<?site_url("public/admin/js/main.js")?>></script>
 </body>
 
 </html>

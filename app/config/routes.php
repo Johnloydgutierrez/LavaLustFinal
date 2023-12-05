@@ -49,11 +49,12 @@ $router->get('/Nhome', 'Welcome::Nhome');
 $router->get('/home', 'Welcome::home');
 $router->get('/contact', 'Welcome::contact');
 $router->get('/signin', 'Welcome::signin');
-$router->get('/AddAssignment', 'Welcome::AddAssignment');
+$router->match('AddAssignment', 'Welcome::AddAssignment','GET|POST');
 $router->get('/admin', 'Welcome::admin');
 $router->get('/Ebike', 'Welcome::Ebike');
 $router->get('/Etable', 'Welcome::Etable');
 $router->get('/assignment', 'Welcome::assignment');
+$router->match('read', 'Welcome::read','GET|POST');
 
 
 
@@ -77,7 +78,7 @@ $router->post('/check', 'Welcome1::check');
 $router->get('/display', 'Admin::display');
 $router->post('/submit', 'Admin::add');
 $router->get('/delete/(:num)', 'Admin::delete');
-$router->get('/edit/(:num)', 'Admin::edit');
+$router->get('/edit/(:any)', 'Admin::edit');
 $router->post('/submitedit/(:num)', 'Admin::submitedit');
 
 

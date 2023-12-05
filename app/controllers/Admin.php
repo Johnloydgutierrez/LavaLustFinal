@@ -30,10 +30,10 @@ class Admin extends Controller {
         }
         
 
-    public function delete($productID)
+    public function delete($Product_id)
     {
-        if(isset($productID)){
-            $this->db->table('products')->where("productID", $productID)->delete();
+        if(isset($Product_id)){
+            $this->db->table('products')->where("Product_id", $Product_id)->delete();
             $this->call->view('Ebikelist');
         }
         else{
@@ -47,27 +47,28 @@ class Admin extends Controller {
     public function edit($id)
     {
         $this->call->model('Addproduct_model');
-        $data['info'] = $this->Addproduct_model->getInfo();
         $data['edit'] = $this->Addproduct_model->searchInfo($id);
         $this->call->view('/Ebikelist', $data);
     }
 
-    public function submitedit($productID)
+    public function submitedit($Product_id)
     {
-        if(isset($productID))
+        if(isset($Product_id))
         {
-        $name = $this->io->post('name');
+        $productName = $this->io->post('name');
         $description = $this->io->post('description');
         $price = $this->io->post('price');
-        $stock_quantity = $this->io->post('stock_quantity');
+        $category = $this->io->post('category');
+        $stock = $this->io->post('stock');
         $data = [
-            "name" => $name,
+            "productName" => $productName,
             "description" => $description,
             "price" => $price,
-            "stock_quantity" => $stock_quantity,
+            "category" =>$category,
+            "stock" => $stock,
         ];
-        $this->db->table('products')->where("productID", $productID)->update($data);
-        redirect('/Ebikelist');    
+        $this->db->table('products')->where("Product_id", $Product_id)->update($data);
+        $this->call->view('Ebikelist');    
         }
         
     }

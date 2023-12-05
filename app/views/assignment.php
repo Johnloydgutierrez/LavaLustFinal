@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-<style>
+    <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -40,16 +38,22 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center the content horizontally */
+        }
+
+        .task-container {
+            max-width: 800px; /* Adjust the width as needed */
+            margin: 20px auto; /* Center the table horizontally */
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .task-table {
-    width: 90%;
-    margin: 20px auto; /* Center the table horizontally */
-    border-collapse: collapse;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 15px;
+        }
 
         th, td {
             border: 1px solid #dddddd;
@@ -69,38 +73,45 @@
         tr:hover {
             background-color: #f1f1f1;
         }
+        h1{
+            text-align: center;
+        }
     </style>
-   <div class="navbar">
-    <a href="/home" class="nav-item">Back</a>
-    
-</div>
-<div class="right-panel">
-          
-          <table class="task-table">
-              <tr>
-                  <th>Employee</th>
-                  <th>Description</th>
-                  <th>Location</th>
-                  <th>Contact Number</th>
-                  <th>Customer Name</th>
-                  
-              </tr>
-              <?php $LAVA =& lava_instance(); ?>
-                  <?php $LAVA->call->model('Main_model'); ?>
-                  <?php $name = $LAVA->Main_model->table(); ?>
-              <?php  foreach ($name as $n): ?>
-              <tr>
-                 
-                  <td><?= $n['employee']?></td>
-                  <td><?= $n['description']?></td>
-                  <td><?= $n['location']?></td>
-                  <td><?= $n['contact']?></td>
-                  <td><?= $n['customer']?></td>
-              <?php endforeach ?>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/home" class="nav-item">Back</a>
+    </div>
+ <h1>Employee Task</h1>
+    <div class="container">
+       
+   
 
-              </tr>
-              <!-- Add more table rows as needed -->
-          </table>
-      </div>
+    <div class="task-container">
+        <table class="task-table">
+            <tr>
+                <th>Employee</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Contact Number</th>
+                <th>Customer Name</th>
+            </tr>
+
+            <?php $LAVA =& lava_instance(); ?>
+            <?php $LAVA->call->model('Main_model'); ?>
+            <?php $name = $LAVA->Main_model->table(); ?>
+
+            <?php foreach ($name as $n): ?>
+                <tr>
+                    <td><?= $n['employee']?></td>
+                    <td><?= $n['description']?></td>
+                    <td><?= $n['location']?></td>
+                    <td><?= $n['contact']?></td>
+                    <td><?= $n['customer']?></td>
+                </tr>
+            <?php endforeach ?>
+        </table>
+    </div>
+    </div>
 </body>
 </html>

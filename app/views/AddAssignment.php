@@ -158,40 +158,51 @@
                 </div>
             </nav>
 
-    <div class="container">
+            <div class="container" style="margin-top: 60px;">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-body p-2 p-md-3"> 
+                        <h3 class="mb-2 pb-1 pb-md-2 mb-md-3">Add Task Details</h3> 
+                        <form action="<?php echo site_url('AddAssignment');?>" method="post">
 
-        <div class="left-panel">
+                            <div class="mb-1"> 
+                                <label for="employee" class="form-label">Employee Name:
+                                    
+                                </label>
+                                <input type="text" name="employee" id="employee" class="form-control" required>
+                            </div>
 
-            <br>
+                            <div class="mb-1">
+                                <label for="description" class="form-label">Description:</label>
+                                <input type="text" name="description" id="description" class="form-control" required>
+                            </div>
 
-            <div class="insert-form">
-                <h1>Add New Task</h1>
-                <br>
-                <form method="post" action="">
-                    <label for="employee">Employee</label>
-                    <input type="text" id="employee" name="employee">
-                    <br>
-                    <label for="description">Description</label>
-                    <input type="text" id="description" name="description">
-                    <br>
-                    <label for="location">Location</label>
-                    <input type="text" id="location" name="location">
-                    <br>
-                    <label for="contactNumber">Contact Number</label>
-                    <input type="text" id="contactNumber" name="contactNumber">
-                    <br>
-                    <label for="customerName">Customer Name</label>
-                    <input type="text" id="customerName" name="customerName">
-                    <br>
-                    <br>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-        </div>
+                            <div class="mb-1">
+                                <label for="location" class="form-label">Location:</label>
+                                <input type="float" name="location" id="location" class="form-control" required>
+                            </div>
+
+                            <div class="mb-1">
+                                <label for="contact" class="form-label">Contact:</label>
+                                <input type="text" name="contact" id="contact" class="form-control" required>
+                            </div>
+                            <div class="mb-1">
+                                <label for="customer" class="form-label">Customer:</label>
+                                <input type="text" name="customer" id="customer" class="form-control" required>
+                            </div>
+
+                            
+
+                            <div class="mb-1"> 
+                                <input class="btn btn-primary btn-sm" type="submit" value="Submit"> 
+                            </div>
+
+                        </form>
+                  
 
         <div class="right-panel">
-          
-            <table class="task-table">
+        <!-- <table class="task-table">
                 <tr>
                     <th>Employee</th>
                     <th>Description</th>
@@ -215,7 +226,8 @@
 
                 </tr>
                 <!-- Add more table rows as needed -->
-            </table>
+            </table> 
+            
         </div>
     </div>
   <!-- Footer Start -->

@@ -23,6 +23,10 @@ class Main_model extends Model {
 	public function table() {
 		return $this->db->raw("select * from addasign");
 	}
+	public function read()
+    {
+        return $this->db->table('addasign')->get_all();
+    }
 
 
 	
