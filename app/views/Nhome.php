@@ -134,7 +134,7 @@
         <img class="card-img-top" src="http://wholesaleeventtents.com/wp-content/uploads/2016/04/500-Watt-26-Inch-Rear-Wheel-Electric-Bicycle-Motor-Kit.jpg" alt="..." />
         <div class="card-body p-4">
             <div class="badge bg-gradient bg-gradient rounded-pill mb-2">News</div>
-            <a class="text-decoration-none link-dark stretched-link" href="/parts"><h5 class="card-title mb-3">E-Bike Parts</h5></a>
+            <a class="text-decoration-none link-dark stretched-link" href="/partsTable"><h5 class="card-title mb-3">E-Bike Parts</h5></a>
             <div class="text-center">
                 <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/Admin">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="1 2 16 16">

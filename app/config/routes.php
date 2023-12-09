@@ -54,6 +54,8 @@ $router->get('/admin', 'Welcome::admin');
 $router->get('/Ebike', 'Welcome::Ebike');
 $router->get('/Etable', 'Welcome::Etable');
 $router->get('/assignment', 'Welcome::assignment');
+$router->get('/addparts', 'Welcome::addparts');
+$router->get('/partsTable', 'Welcome::partsTable');
 $router->match('read', 'Welcome::read','GET|POST');
 
 
@@ -83,4 +85,8 @@ $router->post('/submitedit/(:num)', 'Admin::submitedit');
 
 
 //sheesh
-
+$router->get('/display', 'parts::display');
+$router->post('/submit', 'parts::add');
+$router->get('/delete/(:num)', 'parts::delete');
+$router->get('/edit/(:any)', 'parts::edit');
+$router->post('/submitedit/(:num)', 'parts::submitedit');

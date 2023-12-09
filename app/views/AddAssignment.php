@@ -120,7 +120,7 @@
                 <div class="navbar-nav w-100">
                  
                     <a href="/AddAssignment" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>AddAssignment</a>
-                    <a href="" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Ebike Parts</a>
+                    <a href="/addparts" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Ebike Parts</a>
                     <a href="/Ebike" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>EbikeList</a>
                     <a href="admintable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Sale Management</a>
                     
@@ -168,6 +168,7 @@
 
                             <div class="mb-1"> 
                                 <label for="employee" class="form-label">Employee Name:
+                                    
                                     
                                 </label>
                                 <input type="text" name="employee" id="employee" class="form-control" required>

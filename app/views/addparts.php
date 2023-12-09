@@ -145,7 +145,7 @@
                 <div class="navbar-nav w-100">
                  
                     <a href="/AddAssignment" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>AddAssignment</a>
-                    <a href="/addparts" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Ebike Parts</a>
+                    <a href="" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Ebike Parts</a>
                     <a href="/Ebike" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>EbikeList</a>
                     <a href="admintable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Sale Management</a>
                     
@@ -187,40 +187,27 @@
                     <div class="col-sm-12 col-xl-6 mx-auto">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">NWOW Ebikelist</h6>
-                            <form action="/<?=(isset($edit['Product_id'])) ? "submitedit/" . $edit['Product_id'] : "submit" ?>" method="post">
+                            <form action="/<?=(isset($edit['id'])) ? "submitedit/" . $edit['id'] : "submit" ?>" method="post">
                                 <div class="mb-3">
-                                    <label for="productName" class="form-label">Product Name</label>
-                                    <input type="text" class="form-control" id="productName" name="name" required value="<?=(isset($edit['Product_id'])) ? $edit['productName'] : ""?>">
+                                    <label for="name" class="form-label">Product Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required value="<?=(isset($edit['id'])) ? $edit['name'] : ""?>">
 
                                 </div>
                                 <div class="mb-3">
-                                    <label for="productDescription" class="form-label">Product Description</label>
-                                    <textarea class="form-control" id="productDescription" name="description" required><?=(isset($edit['Product_id'])) ? $edit['description'] : ""?></textarea>
+                                    <label for="description" class="form-label">Product Description</label>
+                                    <textarea class="form-control" id="description" name="description" required><?=(isset($edit['id'])) ? $edit['description'] : ""?></textarea>
                                 </div>
 
                                 <!-- Price -->
                                 <div class="mb-3">
-                                    <label for="exampleInputPrice" class="form-label">Price</label>
-                                    <input type="number" class="form-control" id="exampleInputPrice" name="price" required value="<?=(isset($edit['Product_id'])) ? $edit['price'] : ""?>">
+                                    <label for="price" class="form-label">Price</label>
+                                    <input type="number" class="form-control" id="price" name="price" required value="<?=(isset($edit['id'])) ? $edit['price'] : ""?>">
                                 </div>
 
                                 <!-- Stock -->
-                                <div class="mb-3">
-                                    <label for="exampleInputStock" class="form-label">Stock</label>
-                                    <input type="number" class="form-control" id="exampleInputStock" name="stock" required value="<?=(isset($edit['Product_id'])) ? $edit['stock'] : ""?>">
-                                </div>
 
-                                <!-- Category -->
-                                <h6 class="mb-4">Category</h6>
-                                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="category" required>
-                                    <option selected disabled>Select Category</option>
-                                    <option value="2 wheels" <?=(isset($edit['Product_id']) && $edit['category'] == "2 wheels") ? "selected" : ""?>>2 wheels</option>
-                                    <option value="3 wheels" <?=(isset($edit['Product_id']) && $edit['category'] == "3 wheels") ? "selected" : ""?>>3 wheels</option>
-                                    <option value="4 wheels" <?=(isset($edit['Product_id']) && $edit['category'] == "4 wheels") ? "selected" : ""?>>4 wheels</option>
-    
-                                </select>
 
-                                <button type="submit" class="btn btn-primary"><?=(isset($edit['Product_id'])) ? "Update" : "Submit"?></button>
+                                <button type="submit" class="btn btn-primary"><?=(isset($edit['id'])) ? "Update" : "Submit"?></button>
                             </form>
 
                         </div>
@@ -240,25 +227,23 @@
                                     <th>Product Name</th>
                                     <th>Description</th>
                                     <th>Price</th>
-                                    <th>Category</th>
-                                    <th>Stock</th>
+                                  
                                     
                                 </thead>
                                 <tbody>
                                     <?php $LAVA =& lava_instance(); ?>
-                                    <?php $LAVA->call->model('Addproduct_model'); ?>
-                                    <?php $info = $LAVA->Addproduct_model->getInfo(); ?>
+                                    <?php $LAVA->call->model('partsModel'); ?>
+                                    <?php $info = $LAVA->partsModel->getInfo(); ?>
                                     <?php foreach($info as $for): ?>
                                     <tr>
-                                        <td><?= $for['productName']?></td>
+                                        <td><?= $for['name']?></td>
                                         <td><?= $for['description']?></td>
                                         <td><?= $for['price']?></td>    
-                                        <td><?= $for['category']?></td>
-                                        <td><?= $for['stock']?></td>
-                                        <td><a href="/edit/<?= $for['Product_id'] ?>" class="edit-button">
+                                        
+                                        <td><a href="/edit/<?= $for['id'] ?>" class="edit-button">
                                                 <i class="fas fa-edit"></i> Edit
                                             </a> &#160;
-                                            <a href="/delete/<?= $for['Product_id'] ?>" class="delete-button">
+                                            <a href="/delete/<?= $for['id'] ?>" class="delete-button">
                                                 <i class="fas fa-trash-alt"></i> Delete
                                             </a>
                                         </td>

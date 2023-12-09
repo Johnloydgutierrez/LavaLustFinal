@@ -40,6 +40,12 @@ class Welcome extends Controller {
 	public function assignment() {
 		$this->call->view('assignment');
 	}
+	public function addparts() {
+		$this->call->view('addparts');
+	}
+	public function partsTable() {
+		$this->call->view('partsTable');
+	}
 	public function AddAssignment()  {
 
 
