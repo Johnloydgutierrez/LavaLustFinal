@@ -56,6 +56,7 @@ $router->get('/Etable', 'Welcome::Etable');
 $router->get('/assignment', 'Welcome::assignment');
 $router->get('/addparts', 'Welcome::addparts');
 $router->get('/partsTable', 'Welcome::partsTable');
+$router->post('/addParts', 'Welcome::addPart');
 $router->match('read', 'Welcome::read','GET|POST');
 
 
@@ -76,10 +77,12 @@ $router->post('/check', 'Welcome1::check');
 
 
 
+
 //update and delete
 $router->get('/display', 'Admin::display');
 $router->post('/submit', 'Admin::add');
 $router->get('/delete/(:num)', 'Admin::delete');
+$router->get('/deleteParts/(:num)', 'Admin::deleteParts');
 $router->get('/edit/(:any)', 'Admin::edit');
 $router->post('/submitedit/(:num)', 'Admin::submitedit');
 

@@ -187,27 +187,29 @@
                     <div class="col-sm-12 col-xl-6 mx-auto">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">NWOW Ebikelist</h6>
-                            <form action="/<?=(isset($edit['id'])) ? "submitedit/" . $edit['id'] : "submit" ?>" method="post">
+                            <form action="<?= site_url('addParts'); ?>" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Product Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" required value="<?=(isset($edit['id'])) ? $edit['name'] : ""?>">
+                                    <input type="text" class="form-control" id="name" name="name">
 
                                 </div>
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Product Description</label>
-                                    <textarea class="form-control" id="description" name="description" required><?=(isset($edit['id'])) ? $edit['description'] : ""?></textarea>
+                                    <textarea class="form-control" id="description" name="description" ></textarea>
                                 </div>
+
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Image</label>
+                                    <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                                </div>
+
 
                                 <!-- Price -->
                                 <div class="mb-3">
                                     <label for="price" class="form-label">Price</label>
-                                    <input type="number" class="form-control" id="price" name="price" required value="<?=(isset($edit['id'])) ? $edit['price'] : ""?>">
+                                    <input type="number" class="form-control" id="price" name="price" >
                                 </div>
-
-                                <!-- Stock -->
-
-
-                                <button type="submit" class="btn btn-primary"><?=(isset($edit['id'])) ? "Update" : "Submit"?></button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
 
                         </div>
@@ -226,9 +228,8 @@
                                 <thead>
                                     <th>Product Name</th>
                                     <th>Description</th>
-                                    <th>Price</th>
-                                  
-                                    
+                                    <th>Price</th>  
+                                    <th>Image</th>  
                                 </thead>
                                 <tbody>
                                     <?php $LAVA =& lava_instance(); ?>
@@ -238,15 +239,8 @@
                                     <tr>
                                         <td><?= $for['name']?></td>
                                         <td><?= $for['description']?></td>
-                                        <td><?= $for['price']?></td>    
-                                        
-                                        <td><a href="/edit/<?= $for['id'] ?>" class="edit-button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </a> &#160;
-                                            <a href="/delete/<?= $for['id'] ?>" class="delete-button">
-                                                <i class="fas fa-trash-alt"></i> Delete
-                                            </a>
-                                        </td>
+                                        <td><?= $for['price']?></td>  
+                                        <td><img src="../public/images/<?= $for['image']?>" alt=""></td>    
                                     </tr>
                                     <?php endforeach ?>
                                 </tbody>

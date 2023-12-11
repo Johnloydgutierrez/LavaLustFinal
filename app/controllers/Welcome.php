@@ -74,18 +74,40 @@ class Welcome extends Controller {
 			$data = $this->Main_model->read();
 			$this->call->view('AddAssignment',$data);	
 		}
-		
-
-        
-        
-        
-        
-
-
-
-	
-	  
     }
+
+	public function addPart()
+{
+    $name = $this->io->post('name');
+    $description = $this->io->post('description');
+    $price = $this->io->post('price');
+
+    // Check if the file is uploaded successfully
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $uploadDir = 'public/images/';
+        $uploadFile = $uploadDir . basename($_FILES["image"]["name"]);
+
+        // Move the uploaded file to the destination directory
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadFile)) {
+            $imageFileName = basename($uploadFile);
+
+            // Instantiate the partsModel and insert the data into the database
+            $this->call->model('partsModel');
+            $this->partsModel->insert($name, $description, $price, $imageFileName);
+
+            // Redirect to the 'addparts' view after successful insertion
+            return redirect()->to('/addparts');
+        } else {
+            // Handle file upload failure
+            echo 'File upload failed.';
+        }
+    } else {
+        // Handle file not uploaded
+        echo 'File not uploaded.';
+    }
+}
+
+
 	public function read(){
         $data = $this->Main_model->read();
         $this->call->view('AddAssignment', $data);

@@ -13,5 +13,15 @@ public function search($id)
     return $this->db->table('parts')->where('id',$id)->get();
 }
     
+public function insert($name, $description, $price, $image){
+    // $this->call->database();
+    $data = array(
+        'name' => $name,
+        'description' => $description,
+        'price' => $price,
+        'image' => $image
+    );
+    $result = $this->db->table('parts')->insert($data);
+}
 }
 ?>

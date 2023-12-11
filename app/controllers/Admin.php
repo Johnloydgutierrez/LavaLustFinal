@@ -43,6 +43,12 @@ class Admin extends Controller {
         
     }
 
+    // public function deleteParts($id)
+    // {
+    //         $this->db->table('parts')->where("id", $id)->delete();
+    //         return redirect()->to('/addParts'); 
+    // }
+
     
     public function edit($id)
     {
