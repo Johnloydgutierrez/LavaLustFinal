@@ -163,39 +163,40 @@
             <div class="col-12 col-lg-6">
                 <div class="card">
                     <div class="card-body p-2 p-md-3"> 
-                        <h3 class="mb-2 pb-1 pb-md-2 mb-md-3">Add Task Details</h3> 
-                        <form action="<?php echo site_url('AddAssignment');?>" method="post">
+                        <h3 class="mb-2 pb-1 pb-md-2 mb-md-3">Invoice</h3> 
+                        <form action="<?php echo site_url('Sales');?>" method="post">
+                        
+      <div class="mb-3">
+        <label for="customer" class="form-label">Customer</label>
+        <input type="text" class="form-control" placeholder="Customer"  required>
+      </div>
 
-                            <div class="mb-1"> 
-                                <label for="employee" class="form-label">Employee Name: 
-                                </label>
-                                <input type="text" name="employee" id="employee" class="form-control" required>
-                            </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <input type="text" class="form-control" placeholder="Category"  required>
+</select>
+      </div>
 
-                            <div class="mb-1">
-                                <label for="description" class="form-label">Description:</label>
-                                <input type="text" name="description" id="description" class="form-control" required>
-                            </div>
+      <div class="mb-3">
+        <label for="product" class="form-label">Product</label>
+        <input type="text" class="form-control" placeholder="Product"  required>
 
-                            <div class="mb-1">
-                                <label for="location" class="form-label">Location:</label>
-                                <input type="float" name="location" id="location" class="form-control" required>
-                            </div>
+</select>
+      </div>
 
-                            <div class="mb-1">
-                                <label for="contact" class="form-label">Contact:</label>
-                                <input type="text" name="contact" id="contact" class="form-control" required>
-                            </div>
-                            <div class="mb-1">
-                                <label for="customer" class="form-label">Customer:</label>
-                                <input type="text" name="customer" id="customer" class="form-control" required>
-                            </div>
+      <div class="mb-3">
+      <label for="quantityInput">Quantity:</label>
+      <input type="number" class="form-control" placeholder="Quantity"  required>
+</div>
 
-                            
 
-                            <div class="mb-1"> 
-                                <input class="btn btn-primary btn-sm" type="submit" value="Submit"> 
-                            </div>
+<div class="mb-3">
+  <label for="totalAmount">Amount:</label>
+  <p class="form-control" id="totalAmount"></p>
+</div>
+
+
+      <button type="submit" class="btn btn-danger">Invoice</button>
 
                         </form>
                   
@@ -211,16 +212,16 @@
                     
                 </tr>
                 <?php $LAVA =& lava_instance(); ?>
-                    <?php $LAVA->call->model('Main_model'); ?>
-                    <?php $name = $LAVA->Main_model->table(); ?>
+                    <?php $LAVA->call->model('Sales_model'); ?>
+                    <?php $name = $LAVA->Sales_model->table(); ?>
                 <?php  foreach ($name as $n): ?>
                 <tr>
                    
-                    <td><?= $n['employee']?></td>
-                    <td><?= $n['description']?></td>
-                    <td><?= $n['location']?></td>
-                    <td><?= $n['contact']?></td>
                     <td><?= $n['customer']?></td>
+                    <td><?= $n['category']?></td>
+                    <td><?= $n['product']?></td>
+                    <td><?= $n['quantity']?></td>
+                    <td><?= $n['amount']?></td>
                 <?php endforeach ?>
 
                 </tr>

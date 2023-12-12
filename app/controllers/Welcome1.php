@@ -39,6 +39,10 @@ class Welcome1 extends Controller {
 		$this->call->view('account_verify');
 	}
 
+	public function Sales() {
+		$this->call->view('Sales');
+	}
+
 	public function register_val(){
 		$this->form_validation
 			->name('name')

@@ -58,6 +58,8 @@ $router->get('/addparts', 'Welcome::addparts');
 $router->get('/partsTable', 'Welcome::partsTable');
 $router->post('/addParts', 'Welcome::addPart');
 $router->match('read', 'Welcome::read','GET|POST');
+$router->get('/Sales', 'Welcome1::Sales');
+$router->match('Sales', 'Welcome::Sales','GET|POST');
 
 
 

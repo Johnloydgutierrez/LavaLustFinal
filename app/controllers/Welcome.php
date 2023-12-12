@@ -5,6 +5,7 @@ class Welcome extends Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->call->model('Main_model');
+		$this->call->model('Sales_Model');
 	}
 
 	public function index() {
@@ -43,6 +44,7 @@ class Welcome extends Controller {
 	public function addparts() {
 		$this->call->view('addparts');
 	}
+
 	public function partsTable() {
 		$this->call->view('partsTable');
 	}
@@ -111,6 +113,36 @@ class Welcome extends Controller {
 	public function read(){
         $data = $this->Main_model->read();
         $this->call->view('AddAssignment', $data);
+    }
+
+	public function Sales()  {
+
+
+		if ($this->form_validation->submitted()) {
+			$this->form_validation->name('customer')->required()
+								->name('category')->required()
+								->name('product')->required()
+								->name('quantity')->required()
+								->name('amount')->required();
+		
+			if ($this->form_validation->run()) {
+				$customer = $this->io->post('customer');
+				$category = $this->io->post('category');
+				$product = $this->io->post('product');
+				$quantity = $this->io->post('quantity');
+				$amount = $this->io->post('amount');
+		
+				$this->Sales_model->insert( $customer, $category, $product, $quantity, $amount );
+				redirect('Sales'); // Replace 'success_page' with your actual success page URL
+			} else {
+				// Handle form validation errors
+				$data['error_message'] = validation_errors(); // Include form validation errors in your data
+				$this->call->view('Sales', $data); // Replace 'your_form_view' with your actual form view
+			}
+		} else {
+			$data = $this->Sales_model->read();
+			$this->call->view('Sales',$data);	
+		}
     }
 
 	
