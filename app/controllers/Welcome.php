@@ -96,7 +96,7 @@ class Welcome extends Controller {
             $this->partsModel->insert($name, $description, $price, $imageFileName);
 
             // Redirect to the 'addparts' view after successful insertion
-            return redirect()->to('/addparts');
+        $this->call->view('/addParts');
         } else {
             // Handle file upload failure
             echo 'File upload failed.';

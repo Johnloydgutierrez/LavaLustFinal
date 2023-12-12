@@ -24,7 +24,7 @@ class parts extends Controller {
             );
         
             $this->db->table('parts')->insert($bind);
-         $this->call->view('/addparts');
+         return redirect('/addparts');
         }
         
 

@@ -59,7 +59,7 @@
                     <a href="/AddAssignment" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>AddAssignment</a>
                     <a href="/addparts" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Ebike Parts</a>
                     <a href="/Ebike" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>EbikeList</a>
-                    <a href="admintable" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Sale Management</a>
+        
                     
                   
                 </div>

@@ -87,9 +87,9 @@ $router->get('/edit/(:any)', 'Admin::edit');
 $router->post('/submitedit/(:num)', 'Admin::submitedit');
 
 
-//sheesh
-$router->get('/display', 'parts::display');
-$router->post('/submit', 'parts::add');
-$router->get('/delete/(:num)', 'parts::delete');
-$router->get('/edit/(:any)', 'parts::edit');
-$router->post('/submitedit/(:num)', 'parts::submitedit');
+    //sheesh
+    $router->get('/display', 'parts::display');
+    $router->post('/submit', 'parts::add');
+    $router->get('/delete/(:num)', 'parts::delete');
+    $router->get('/edit/(:any)', 'parts::edit');
+    $router->post('/submitedit/(:num)', 'parts::submitedit');

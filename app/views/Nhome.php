@@ -16,7 +16,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         header{
-            background-color: cyan;
+            background-color: #5583EE;
         }
     </style>
         
@@ -36,9 +36,6 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
           <a class="nav-link" href="/home">Home</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/Contact">Contact</a>
           </li>
           <li class="nav-item">
           <a class="nav-link" href="/">Logout</a>
@@ -62,19 +59,13 @@
                         <h1 class="display-5 fw-bolder text-white mb-2">NWOW E-Bike Shop-Camilmil</h1>
                         <p class="lead fw-normal text-white-50 mb-4">Easy to BUY Easy to RIDE!</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/admin" >
+                            <a class="btn btn-success btn-lg px-4 me-sm-3" href="/admin" >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="1 2 16 16">
   <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
 </svg>
                                 Administrator
                             </a>
-                            <a class="btn btn-secondary btn-lg px-4 " href="/Payment">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-clock-history" viewBox="1 0 14 17">
-  <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
-  <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
-  <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
-</svg>
-                                Payment History</a>
+                     
                         </div>
                         </div>
                     </div>
@@ -99,7 +90,7 @@
             <div class="badge bg-gradient bg-gradient rounded-pill mb-2">News</div>
             <a class="text-decoration-none link-dark stretched-link" href="/Etable"><h5 class="card-title mb-3">Electric Tricycle</h5></a>
             <div class="text-center">
-                <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/Etable">
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/Etable">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="1 2 16 16">
                         <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
                     </svg>
@@ -117,7 +108,7 @@
             <div class="badge bg-gradient bg-gradient rounded-pill mb-2">News</div>
             <a class="text-decoration-none link-dark stretched-link" href="/assignment"><h5 class="card-title mb-3">Mechanics Assignment</h5></a>
             <div class="text-center">
-                <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/assignment">
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/assignment">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="1 2 16 16">
                         <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
                     </svg>
@@ -136,7 +127,7 @@
             <div class="badge bg-gradient bg-gradient rounded-pill mb-2">News</div>
             <a class="text-decoration-none link-dark stretched-link" href="/partsTable"><h5 class="card-title mb-3">E-Bike Parts</h5></a>
             <div class="text-center">
-                <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/Admin">
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/Admin">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="1 2 16 16">
                         <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
                     </svg>

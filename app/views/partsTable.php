@@ -88,6 +88,7 @@
                             <thead>
                                 <th>Product Name</th>
                                 <th>Description</th>
+                                <th>Image</th>
                                 <th>Price</th>
                                
                                 
@@ -100,6 +101,7 @@
                                 <tr>
                                     <td><?= $for['name']?></td>
                                     <td><?= $for['description']?></td>
+                                    <td><img src="../public/images/<?= $for['image']?>" alt=""></td>    
                                     <td><?= $for['price']?></td>    
                                  
                                     
